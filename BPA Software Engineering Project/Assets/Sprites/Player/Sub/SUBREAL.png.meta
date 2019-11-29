@@ -1,0 +1,655 @@
+fileFormatVersion: 2
+guid: fe2fe215375a8994184e1cdfcfa279f9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7073840775872934158
+    second: SUBREAL_0
+  - first:
+      213: 4419592244602873691
+    second: SUBREAL_1
+  - first:
+      213: 360455811036400478
+    second: SUBREAL_2
+  - first:
+      213: -4062073619679410510
+    second: SUBREAL_3
+  - first:
+      213: -3775507467749082396
+    second: SUBREAL_4
+  - first:
+      213: 6022407412269903948
+    second: SUBREAL_5
+  - first:
+      213: -1551700652803361967
+    second: SUBREAL_6
+  - first:
+      213: 4168700011881383468
+    second: SUBREAL_7
+  - first:
+      213: 5023314101030534390
+    second: SUBREAL_8
+  - first:
+      213: -7406052767231904731
+    second: SUBREAL_15
+  - first:
+      213: -5157884902714452916
+    second: SUBREAL_18
+  - first:
+      213: -4037728025619197983
+    second: SUBREAL_19
+  - first:
+      213: 3052467372785703840
+    second: SUBREAL_20
+  - first:
+      213: -6085519194022978895
+    second: SUBREAL_21
+  - first:
+      213: -4433430753484646380
+    second: SUBREAL_22
+  - first:
+      213: -4978742496588284557
+    second: SUBREAL_23
+  - first:
+      213: -6341999755860398567
+    second: SUBREAL_24
+  - first:
+      213: -3711941489316069582
+    second: SUBREAL_25
+  - first:
+      213: 2877405815699568535
+    second: SUBREAL_26
+  - first:
+      213: -8172870705616247526
+    second: SUBREAL_27
+  - first:
+      213: -2678670095114727585
+    second: SUBREAL_28
+  - first:
+      213: 5288696371556812215
+    second: SUBREAL_29
+  - first:
+      213: -2703473818160595785
+    second: SUBREAL_30
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SUBREAL_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 2485
+        width: 729
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 437f2a376b948c6419a33639f9b7fc8f
+      internalID: -7073840775872934158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_1
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 2499
+        width: 729
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 501449a164ca69742a192dced0d13e30
+      internalID: 4419592244602873691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_2
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 2485
+        width: 729
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccb7dca18f7f4914dabbcef1a2760b64
+      internalID: 360455811036400478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 2057
+        width: 729
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9183d7a2c224526458299cfe14d0f009
+      internalID: -4062073619679410510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_4
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 2114
+        width: 729
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 196f035d6ca1ef847970c6081877d9f8
+      internalID: -3775507467749082396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_5
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 2114
+        width: 732
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475a4ce802a6498478dae4e90bd0f073
+      internalID: 6022407412269903948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1714
+        width: 729
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36fced2d8cbd30d40820674319aa589a
+      internalID: -1551700652803361967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_7
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1714
+        width: 770
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 945b924389267e94f8da94371134e1f4
+      internalID: 4168700011881383468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_8
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1714
+        width: 729
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c344a5545dc5084186214ffd8ce7103
+      internalID: 5023314101030534390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_15
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1315
+        width: 769
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 140e6b4870cc0434a8d5cef1b37e890a
+      internalID: -7406052767231904731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_18
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1284
+        width: 760
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a675637e5c9674a96a55d1946f3207
+      internalID: -5157884902714452916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_19
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 1284
+        width: 760
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1a702a7f3df9144c88c6b47ead61dfb
+      internalID: -4037728025619197983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_20
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 884
+        width: 760
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d1c3a5b08ea8f4d8039a2d8970a292
+      internalID: 3052467372785703840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_21
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 884
+        width: 760
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ad5695915d17f45aea3c20a383ac9f
+      internalID: -6085519194022978895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_22
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 884
+        width: 760
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e66b6bdc7c13aa4468a19911b21f31c5
+      internalID: -4433430753484646380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_23
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 485
+        width: 760
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5533d588214d5d499f3783e5ecc6e34
+      internalID: -4978742496588284557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_24
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 594
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e9b30f473ef5e4bb252ab856bab24f
+      internalID: -6341999755860398567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_25
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 568
+        width: 40
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085573c4029bd2b478eba25ff98b09bf
+      internalID: -3711941489316069582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_26
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 485
+        width: 729
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23df9217b326f574681eea3b9c3f6725
+      internalID: 2877405815699568535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_27
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 485
+        width: 755
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ab46b9394ed514ab323547c27b9db0
+      internalID: -8172870705616247526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_28
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 560
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd2e69db9d2b0c4f80a3d3e2ef97606
+      internalID: -2678670095114727585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_29
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 84
+        width: 751
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c1d9cd9792d6a4689c17e613e8b80c
+      internalID: 5288696371556812215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SUBREAL_30
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 84
+        width: 729
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e64f8df699ebe42b45bb5e82252dd9
+      internalID: -2703473818160595785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
