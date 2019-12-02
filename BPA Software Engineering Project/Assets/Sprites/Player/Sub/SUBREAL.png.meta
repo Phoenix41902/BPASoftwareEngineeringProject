@@ -58,16 +58,16 @@ TextureImporter:
     second: SUBREAL_25
   - first:
       213: 2877405815699568535
-    second: SUBREAL_26
+    second: SubForwardOne
   - first:
       213: -8172870705616247526
-    second: SUBREAL_27
+    second: SubForwardTwo
   - first:
       213: -2678670095114727585
     second: SUBREAL_28
   - first:
       213: 5288696371556812215
-    second: SUBREAL_29
+    second: SubForwardThree
   - first:
       213: -2703473818160595785
     second: SUBREAL_30
@@ -163,7 +163,7 @@ TextureImporter:
         width: 729
         height: 215
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -184,7 +184,7 @@ TextureImporter:
         width: 729
         height: 201
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -205,7 +205,7 @@ TextureImporter:
         width: 729
         height: 215
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -226,7 +226,7 @@ TextureImporter:
         width: 729
         height: 243
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -247,7 +247,7 @@ TextureImporter:
         width: 729
         height: 223
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -268,7 +268,7 @@ TextureImporter:
         width: 732
         height: 186
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -289,7 +289,7 @@ TextureImporter:
         width: 729
         height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -310,7 +310,7 @@ TextureImporter:
         width: 770
         height: 186
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -331,7 +331,7 @@ TextureImporter:
         width: 729
         height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -352,7 +352,7 @@ TextureImporter:
         width: 769
         height: 260
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -373,7 +373,7 @@ TextureImporter:
         width: 760
         height: 215
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -394,7 +394,7 @@ TextureImporter:
         width: 760
         height: 215
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -415,7 +415,7 @@ TextureImporter:
         width: 760
         height: 216
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -436,7 +436,7 @@ TextureImporter:
         width: 760
         height: 216
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -457,7 +457,7 @@ TextureImporter:
         width: 760
         height: 216
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -478,7 +478,7 @@ TextureImporter:
         width: 760
         height: 214
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -491,57 +491,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SUBREAL_24
+      name: SubForwardOne
       rect:
         serializedVersion: 2
-        x: 805
-        y: 594
-        width: 9
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0e9b30f473ef5e4bb252ab856bab24f
-      internalID: -6341999755860398567
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SUBREAL_25
-      rect:
-        serializedVersion: 2
-        x: 810
-        y: 568
-        width: 40
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 085573c4029bd2b478eba25ff98b09bf
-      internalID: -3711941489316069582
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SUBREAL_26
-      rect:
-        serializedVersion: 2
-        x: 832
+        x: 801
         y: 485
-        width: 729
-        height: 214
+        width: 760
+        height: 216
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -554,7 +512,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SUBREAL_27
+      name: SubForwardTwo
       rect:
         serializedVersion: 2
         x: 1606
@@ -562,7 +520,7 @@ TextureImporter:
         width: 755
         height: 214
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -575,36 +533,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SUBREAL_28
-      rect:
-        serializedVersion: 2
-        x: 806
-        y: 560
-        width: 23
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5bd2e69db9d2b0c4f80a3d3e2ef97606
-      internalID: -2678670095114727585
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SUBREAL_29
+      name: SubForwardThree
       rect:
         serializedVersion: 2
         x: 10
-        y: 84
+        y: 85
         width: 751
         height: 216
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -625,7 +562,7 @@ TextureImporter:
         width: 729
         height: 216
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
