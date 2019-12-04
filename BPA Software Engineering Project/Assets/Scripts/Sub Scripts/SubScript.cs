@@ -19,6 +19,8 @@ public class SubScript : MonoBehaviour
     private Animator exhaustAnimator;
     [SerializeField]
     private Animator missileAnimator;
+    [SerializeField]
+    private Animator chargeAnimator;
 
     // speed and boost
     public float subSpeed = 100f;
@@ -37,8 +39,15 @@ public class SubScript : MonoBehaviour
 
     // special vars for the charged missile
     public float chargeMissileSpeed = 10f;
-    public float chargeMissileDamage = 10f;
-    private int chargeCounter = 0;
+    public float chargeMissileDamage = 5f;
+    public float maxChargeMissileDamage = 20f;
+    public float maxChargeMissileSpeed = 20f;
+    private float chargeCounter = 0;
+
+    // damage values for each missile
+    public float defaultMissileDamage = 5f;
+    public float trippleMissileDamage = 2f;
+    public float bigMissileDamage = 10f;
 
     // function to create the sub
     void MakeSingleTon() {
@@ -53,7 +62,7 @@ public class SubScript : MonoBehaviour
     void Awake() {
         MakeSingleTon();
         //SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
-        SelectedMissiles = "default";
+        SelectedMissiles = "charge";
         SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
         SelectedArms = GameControllerScript.instance.GetSelectedArms();
     }
@@ -84,20 +93,41 @@ public class SubScript : MonoBehaviour
         faceAndMoveToMouse();
 
         // call missiles
-        if (Input.GetButton("FireMissiles")) {
+        if (Input.GetButtonDown("FireMissiles")) {
             // check which missile to use
             if (SelectedMissiles == "default") {
                 fireDefaultMissile();
             }
-            else if (SelectedMissiles ==  "tripple") {
-                fireTrippleMissile();
-            }
             else if (SelectedMissiles == "big") {
                 fireBigMissile();
             } 
-            else if (SelectedMissiles == "charge") {
-                fireChargeMissile();
+            else if (SelectedMissiles == "tripple") {
+                fireTrippleMissile();
             }
+        }
+        // charged missiles has special call
+        if (Input.GetButton("FireMissiles")) {
+            if (SelectedMissiles == "charge") {
+                fireChargeMissile();              
+            }
+        }
+        // create object after charge
+        if (Input.GetButtonUp("FireMissiles")) {
+            Instantiate(ChargeMissilePrefab, FirePoint.position, FirePoint.rotation);
+            Debug.Log("wordasdf");
+            Debug.Log(chargeMissileSpeed);
+        }
+    }
+    
+    void LateUpdate() {
+        if(Input.GetButtonUp("FireMissiles")) {
+            chargeMissileDamage = 5f;
+            chargeMissileSpeed = 5f;
+            chargeCounter = 0f;
+            chargeAnimator.ResetTrigger("StartedCharging");
+            chargeAnimator.ResetTrigger("ContCharging");
+            chargeAnimator.ResetTrigger("FinishedCharging");
+            chargeAnimator.SetTrigger("Fired");
         }
     }
 
@@ -165,11 +195,29 @@ public class SubScript : MonoBehaviour
     // charge missile
     private void fireChargeMissile() {
         if (Input.GetButton("FireMissiles")) {
-            chargeCounter++;
-            if(chargeCounter >= 100) {
-                Debug.Log("Worked!");
+            chargeCounter += 0.1f;
+            
+            // set the values of the speed and damage
+            chargeMissileDamage = chargeCounter;
+            chargeMissileSpeed = chargeCounter;
+
+            // set the animator
+            if (chargeCounter > 0 && chargeCounter <= 10) {
+                chargeAnimator.SetTrigger("StartedCharging");
             }
+            else if (chargeCounter > 10 && chargeCounter <= 20) {
+                chargeAnimator.SetTrigger("ContCharging");
+            }
+            else if (chargeCounter > 20) {
+                chargeAnimator.SetTrigger("FinishedCharging");
+            } else {
+                chargeAnimator.SetTrigger("Fired");
+            }
+
+            // make sure they are under the limit
+            if (chargeMissileDamage > maxChargeMissileDamage) chargeMissileDamage = 25f;
+            if (chargeMissileSpeed > maxChargeMissileSpeed) chargeMissileSpeed = 25f;
+            Debug.Log("word");
         }
-        //Instantiate(ChargeMissilePrefab, FirePoint.position, FirePoint.rotation);
     }
 }
