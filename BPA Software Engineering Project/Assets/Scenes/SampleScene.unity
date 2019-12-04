@@ -461,6 +461,49 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 10}
   m_EdgeRadius: 0
+--- !u!1 &749717858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 749717860}
+  - component: {fileID: 749717859}
+  m_Layer: 0
+  m_Name: Game Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &749717859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749717858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea3844348970cb4eb762ef6dfbe1392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &749717860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749717858}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.7582026, y: -0.31373054, z: -25.228516}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &898816738
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +687,6 @@ GameObject:
   - component: {fileID: 1037081276}
   - component: {fileID: 1037081278}
   - component: {fileID: 1037081279}
-  - component: {fileID: 1037081280}
   - component: {fileID: 1037081281}
   m_Layer: 0
   m_Name: Sub
@@ -737,6 +779,11 @@ MonoBehaviour:
   subSpeed: 1
   subDecelSpeed: -100
   rb: {fileID: 1037081279}
+  FirePoint: {fileID: 98910797}
+  DefaultMissilePrefab: {fileID: 1057180831565223446, guid: 8a6dc483e32cf224d921f8a8eb725cf9,
+    type: 3}
+  TrippleMissilePrefab: {fileID: 8899185971377141595, guid: 504d87bff765d564fa0f89d20e124e88,
+    type: 3}
 --- !u!50 &1037081279
 Rigidbody2D:
   serializedVersion: 4
@@ -758,21 +805,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1037081280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037081275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f954f1fa9652074bb36ba072063c90c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 98910797}
-  bulletPrefab: {fileID: 1057180831565223446, guid: 8a6dc483e32cf224d921f8a8eb725cf9,
-    type: 3}
 --- !u!61 &1037081281
 BoxCollider2D:
   m_ObjectHideFlags: 0

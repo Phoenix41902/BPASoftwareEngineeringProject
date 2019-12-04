@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefaultMissilesScript : MonoBehaviour
+public class TrippleMissileScript : MonoBehaviour
 {
-    // vars
-    private float speed = 10f;
+   // vars
+    private float speed = 8f;
     public Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()

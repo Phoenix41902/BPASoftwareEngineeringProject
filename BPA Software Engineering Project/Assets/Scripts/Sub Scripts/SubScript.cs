@@ -5,6 +5,11 @@ using UnityEngine;
 public class SubScript : MonoBehaviour
 {
     // vars
+    // sub attachment prefs
+    private string SelectedMissiles;
+    private string SelectedBoost;
+    private string SelectedArms;
+
     // animators
     [SerializeField]
     private Animator subAnimator;
@@ -14,34 +19,49 @@ public class SubScript : MonoBehaviour
     // speed and boost
     public float subSpeed = 100f;
     public float subDecelSpeed = 2f;
-    private float subDefaultBoostSpeed = 5f;
-    private float subDefaultBoostTime;
-    private float startDefaultDashTime = 1f;
-    private bool isBoosting = false;
 
     // rigid body
     [SerializeField]
     private Rigidbody2D rb;
 
-    // set pos to 0, 0
+    // missiles vars
+    public Transform FirePoint;
+    public GameObject DefaultMissilePrefab;
+    public GameObject TrippleMissilePrefab;
+
+    // set the player prefs
+    void Awake() {
+        //SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
+        SelectedMissiles = "tripple";
+        SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
+        SelectedArms = GameControllerScript.instance.GetSelectedArms();
+    }
+
+    // set pos to 0, 0 (REMOVE LATER)
     void Start() {
         transform.position = new Vector3(0f, 0f, 0f);
-        subDefaultBoostTime = startDefaultDashTime;
     }
+
     // Update is called once per frame
     void Update()
     {
         // call movement
         faceAndMoveToMouse();
 
-        // call boost
-        if (!isBoosting) {
-            //defaultBoost();
+        // call missiles
+        if (Input.GetButtonDown("FireMissiles")) {
+            // check which missile to use
+            if (SelectedMissiles == "default") {
+                fireDefaultMissile();
+            }
+            else if (SelectedMissiles ==  "tripple") {
+                fireTrippleMissile();
+            }
         }
     }
 
     // basic movement function
-    void faceAndMoveToMouse() {
+    private void faceAndMoveToMouse() {
         // gets mouse position
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -77,21 +97,22 @@ public class SubScript : MonoBehaviour
         }
     }
 
-    // default boost function
-    /* finish later
-    void defaultBoost() {
-        if (Input.GetButtonDown("Boost")) {
-            Debug.Log("workds");
-            isBoosting = true;
-        } else {
-            if (subDefaultBoostTime <= 0) {
-                isBoosting = false;
-                subDefaultBoostTime = startDefaultDashTime;
-            } else {
-                rb.velocity = Vector2. * subDefaultBoostSpeed;
-                subDefaultBoostTime -= Time.deltaTime;
-            }
-        }
+    // Missile functions
+    // default
+    private void fireDefaultMissile() {
+        Instantiate(DefaultMissilePrefab, FirePoint.position, FirePoint.rotation);
     }
-    */
+
+    // tripple
+    private void fireTrippleMissile() {
+        StartCoroutine(fireTrippleMissileWaiter());
+    }
+    // delay for the missiles to fire
+    IEnumerator fireTrippleMissileWaiter() {
+        Instantiate(TrippleMissilePrefab, FirePoint.position, FirePoint.rotation);
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(TrippleMissilePrefab, FirePoint.position, FirePoint.rotation);
+        yield return new WaitForSeconds(0.2f);
+        Instantiate(TrippleMissilePrefab, FirePoint.position, FirePoint.rotation);
+    }
 }
