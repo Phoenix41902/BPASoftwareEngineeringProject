@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChargeMissileScript : MonoBehaviour
 {
     // vars
-    private float speed = 10f;
+    private float speed = SubScript.instance.chargeMissileSpeed;
     public Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()

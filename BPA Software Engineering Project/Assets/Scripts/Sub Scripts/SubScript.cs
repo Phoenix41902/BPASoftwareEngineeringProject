@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SubScript : MonoBehaviour
 {
+    // create instance of the sub for use on the other parts of the sub
+    public static SubScript instance;
     // vars
     // sub attachment prefs
     private string SelectedMissiles;
@@ -33,10 +35,25 @@ public class SubScript : MonoBehaviour
     public GameObject BigMissilePrefab;
     public GameObject ChargeMissilePrefab;
 
+    // special vars for the charged missile
+    public float chargeMissileSpeed = 10f;
+    public float chargeMissileDamage = 10f;
+    private int chargeCounter = 0;
+
+    // function to create the sub
+    void MakeSingleTon() {
+        if(instance != null) {
+            Destroy(gameObject);
+        } else {
+            instance = this;
+        }
+    }
+
     // set the player prefs
     void Awake() {
+        MakeSingleTon();
         //SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
-        SelectedMissiles = "tripple";
+        SelectedMissiles = "default";
         SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
         SelectedArms = GameControllerScript.instance.GetSelectedArms();
     }
@@ -67,7 +84,7 @@ public class SubScript : MonoBehaviour
         faceAndMoveToMouse();
 
         // call missiles
-        if (Input.GetButtonDown("FireMissiles")) {
+        if (Input.GetButton("FireMissiles")) {
             // check which missile to use
             if (SelectedMissiles == "default") {
                 fireDefaultMissile();
@@ -77,7 +94,8 @@ public class SubScript : MonoBehaviour
             }
             else if (SelectedMissiles == "big") {
                 fireBigMissile();
-            } else if (SelectedMissiles == "charge") {
+            } 
+            else if (SelectedMissiles == "charge") {
                 fireChargeMissile();
             }
         }
@@ -146,6 +164,12 @@ public class SubScript : MonoBehaviour
 
     // charge missile
     private void fireChargeMissile() {
-        Instantiate(ChargeMissilePrefab, FirePoint.position, FirePoint.rotation);
+        if (Input.GetButton("FireMissiles")) {
+            chargeCounter++;
+            if(chargeCounter >= 100) {
+                Debug.Log("Worked!");
+            }
+        }
+        //Instantiate(ChargeMissilePrefab, FirePoint.position, FirePoint.rotation);
     }
 }

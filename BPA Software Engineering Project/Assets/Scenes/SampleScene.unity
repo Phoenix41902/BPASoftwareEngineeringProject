@@ -789,6 +789,8 @@ MonoBehaviour:
     type: 3}
   ChargeMissilePrefab: {fileID: 3811648498760355612, guid: 25dcb6e965d8f52478b0e347a77010d7,
     type: 3}
+  chargeMissileSpeed: 10
+  chargeMissileDamage: 10
 --- !u!50 &1037081279
 Rigidbody2D:
   serializedVersion: 4
