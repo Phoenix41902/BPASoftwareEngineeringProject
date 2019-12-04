@@ -15,6 +15,8 @@ public class SubScript : MonoBehaviour
     private Animator subAnimator;
     [SerializeField]
     private Animator exhaustAnimator;
+    [SerializeField]
+    private Animator missileAnimator;
 
     // speed and boost
     public float subSpeed = 100f;
@@ -28,6 +30,8 @@ public class SubScript : MonoBehaviour
     public Transform FirePoint;
     public GameObject DefaultMissilePrefab;
     public GameObject TrippleMissilePrefab;
+    public GameObject BigMissilePrefab;
+    public GameObject ChargeMissilePrefab;
 
     // set the player prefs
     void Awake() {
@@ -40,6 +44,20 @@ public class SubScript : MonoBehaviour
     // set pos to 0, 0 (REMOVE LATER)
     void Start() {
         transform.position = new Vector3(0f, 0f, 0f);
+
+        // set what shows up on the sub
+        // missiles
+        if (SelectedMissiles ==  "tripple") 
+        {
+            missileAnimator.SetTrigger("TrippleSelected");
+        }
+        else if (SelectedMissiles == "big") 
+        {
+            missileAnimator.SetTrigger("BigSelected");
+        } 
+        else if (SelectedMissiles == "charge") {
+            missileAnimator.SetTrigger("ChargeSelected");
+        }
     }
 
     // Update is called once per frame
@@ -56,6 +74,11 @@ public class SubScript : MonoBehaviour
             }
             else if (SelectedMissiles ==  "tripple") {
                 fireTrippleMissile();
+            }
+            else if (SelectedMissiles == "big") {
+                fireBigMissile();
+            } else if (SelectedMissiles == "charge") {
+                fireChargeMissile();
             }
         }
     }
@@ -110,9 +133,19 @@ public class SubScript : MonoBehaviour
     // delay for the missiles to fire
     IEnumerator fireTrippleMissileWaiter() {
         Instantiate(TrippleMissilePrefab, FirePoint.position, FirePoint.rotation);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         Instantiate(TrippleMissilePrefab, FirePoint.position, FirePoint.rotation);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         Instantiate(TrippleMissilePrefab, FirePoint.position, FirePoint.rotation);
+    }
+
+    // big missile
+    private void fireBigMissile() {
+        Instantiate(BigMissilePrefab, FirePoint.position, FirePoint.rotation);
+    }
+
+    // charge missile
+    private void fireChargeMissile() {
+        Instantiate(ChargeMissilePrefab, FirePoint.position, FirePoint.rotation);
     }
 }
