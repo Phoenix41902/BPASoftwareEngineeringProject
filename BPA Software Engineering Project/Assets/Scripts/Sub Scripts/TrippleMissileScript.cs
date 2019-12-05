@@ -13,4 +13,10 @@ public class TrippleMissileScript : MonoBehaviour
         // missile needs to fly forward
         rb.velocity = transform.right * speed;
     }
+    // if it hits something
+    void OnTriggerEnter2D(Collider2D col) {
+        if (col.tag == "Enemy") {
+            Destroy(gameObject);
+        }
+    }
 }
