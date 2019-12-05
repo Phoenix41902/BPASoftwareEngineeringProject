@@ -62,7 +62,7 @@ public class SubScript : MonoBehaviour
     void Awake() {
         MakeSingleTon();
         //SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
-        SelectedMissiles = "charge";
+        SelectedMissiles = "default";
         SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
         SelectedArms = GameControllerScript.instance.GetSelectedArms();
     }
@@ -113,9 +113,9 @@ public class SubScript : MonoBehaviour
         }
         // create object after charge
         if (Input.GetButtonUp("FireMissiles")) {
-            Instantiate(ChargeMissilePrefab, FirePoint.position, FirePoint.rotation);
-            Debug.Log("wordasdf");
-            Debug.Log(chargeMissileSpeed);
+            if (SelectedMissiles == "charge") {
+                Instantiate(ChargeMissilePrefab, FirePoint.position, FirePoint.rotation);
+            }   
         }
     }
     

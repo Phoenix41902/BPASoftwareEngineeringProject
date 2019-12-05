@@ -7,6 +7,9 @@ TagManager:
   - MissileCollector
   - Missile
   - PlayerSub
+  - Enemy
+  - Terrain
+  - TerrainHazzard
   layers:
   - Default
   - TransparentFX
