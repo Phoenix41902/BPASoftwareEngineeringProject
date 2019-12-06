@@ -42,12 +42,13 @@ public class SubScript : MonoBehaviour
     public float chargeMissileDamage = 5f;
     public float maxChargeMissileDamage = 20f;
     public float maxChargeMissileSpeed = 20f;
+    public float lastChargeMissileDamage;
     private float chargeCounter = 0;
 
     // damage values for each missile
-    public float defaultMissileDamage = 5f;
-    public float trippleMissileDamage = 2f;
-    public float bigMissileDamage = 10f;
+    public float defaultMissileDamage;
+    public float trippleMissileDamage;
+    public float bigMissileDamage;
 
     // function to create the sub
     void MakeSingleTon() {
@@ -62,7 +63,7 @@ public class SubScript : MonoBehaviour
     void Awake() {
         MakeSingleTon();
         //SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
-        SelectedMissiles = "tripple";
+        SelectedMissiles = "big";
         SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
         SelectedArms = GameControllerScript.instance.GetSelectedArms();
     }
@@ -114,6 +115,7 @@ public class SubScript : MonoBehaviour
         // create object after charge
         if (Input.GetButtonUp("FireMissiles")) {
             if (SelectedMissiles == "charge") {
+                lastChargeMissileDamage = chargeMissileDamage;
                 Instantiate(ChargeMissilePrefab, FirePoint.position, FirePoint.rotation);
             }   
         }
@@ -121,6 +123,7 @@ public class SubScript : MonoBehaviour
     
     void LateUpdate() {
         if(Input.GetButtonUp("FireMissiles")) {
+
             chargeMissileDamage = 5f;
             chargeMissileSpeed = 5f;
             chargeCounter = 0f;
@@ -217,7 +220,6 @@ public class SubScript : MonoBehaviour
             // make sure they are under the limit
             if (chargeMissileDamage > maxChargeMissileDamage) chargeMissileDamage = 25f;
             if (chargeMissileSpeed > maxChargeMissileSpeed) chargeMissileSpeed = 25f;
-            Debug.Log("word");
         }
     }
 }

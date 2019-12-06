@@ -5,11 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - MissileCollector
-  - Missile
   - PlayerSub
   - Enemy
   - Terrain
   - TerrainHazzard
+  - DefaultMissile
+  - BigMissile
+  - ChargeMissile
+  - TrippleMissile
   layers:
   - Default
   - TransparentFX

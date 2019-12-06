@@ -894,8 +894,9 @@ MonoBehaviour:
   chargeMissileDamage: 10
   maxChargeMissileDamage: 20
   maxChargeMissileSpeed: 20
+  lastChargeMissileDamage: 0
   defaultMissileDamage: 5
-  trippleMissileDamage: 2
+  trippleMissileDamage: 1
   bigMissileDamage: 10
 --- !u!50 &1037081279
 Rigidbody2D:
@@ -956,6 +957,7 @@ GameObject:
   - component: {fileID: 1705462875}
   - component: {fileID: 1705462874}
   - component: {fileID: 1705462873}
+  - component: {fileID: 1705462877}
   m_Layer: 0
   m_Name: TEST
   m_TagString: Enemy
@@ -1074,6 +1076,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1705462877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705462872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7729a37e3a83ac499d25a83ef95bd15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1807538151
 GameObject:
   m_ObjectHideFlags: 0
