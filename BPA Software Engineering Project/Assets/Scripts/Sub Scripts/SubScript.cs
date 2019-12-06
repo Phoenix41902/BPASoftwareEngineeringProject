@@ -268,4 +268,11 @@ public class SubScript : MonoBehaviour
         yield return new WaitForSeconds(0.45f);
         isBoosting = false;
     }
+
+    // create charge boost
+    private void chargeBoost() {
+
+    }
+
+    IEnumerator 
 }
