@@ -36,6 +36,7 @@ public class SubScript : MonoBehaviour
     public GameObject TripleMissilePrefab;
     public GameObject BigMissilePrefab;
     public GameObject ChargeMissilePrefab;
+    private bool canFire = true;
 
     // special vars for the charged missile
     public float chargeMissileSpeed = 10f;
@@ -63,7 +64,7 @@ public class SubScript : MonoBehaviour
     void Awake() {
         MakeSingleTon();
         //SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
-        SelectedMissiles = "triple";
+        SelectedMissiles = "default";
         SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
         SelectedArms = GameControllerScript.instance.GetSelectedArms();
     }
@@ -94,6 +95,14 @@ public class SubScript : MonoBehaviour
         faceAndMoveToMouse();
 
         // call missiles
+        if (canFire && Input.GetButton("FireMissiles")) {
+            StartCoroutine(fireMissiles());
+        }
+    }
+
+    // create delay between missile shots
+    IEnumerator fireMissiles() {
+        // call missiles
         if (Input.GetButtonDown("FireMissiles")) {
             // check which missile to use
             if (SelectedMissiles == "default") {
@@ -119,11 +128,16 @@ public class SubScript : MonoBehaviour
                 Instantiate(ChargeMissilePrefab, FirePoint.position, FirePoint.rotation);
             }   
         }
+
+        // delay
+        canFire = false;
+        yield return new WaitForSeconds(0.3f);
+        canFire = true;
     }
+
     
     void LateUpdate() {
         if(Input.GetButtonUp("FireMissiles")) {
-
             chargeMissileDamage = 5f;
             chargeMissileSpeed = 5f;
             chargeCounter = 0f;
