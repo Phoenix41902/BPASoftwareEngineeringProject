@@ -176,7 +176,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202883781}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.41, y: 0.01, z: -2.4569206}
+  m_LocalPosition: {x: 11.25, y: -0.01, z: -2.4569206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -517,7 +517,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661649535}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.37, y: 0.01, z: -2.4569206}
+  m_LocalPosition: {x: -11.25, y: -0.01, z: -2.4569206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -700,8 +700,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007652452}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.998, y: -0.53, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.0132, y: -0.4788, z: 0}
+  m_LocalScale: {x: 1.200741, y: 1.3931895, z: 1}
   m_Children: []
   m_Father: {fileID: 1037081277}
   m_RootOrder: 0
@@ -853,7 +853,7 @@ Transform:
   m_GameObject: {fileID: 1037081275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.205, y: 0.302, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_Children:
   - {fileID: 1007652453}
   - {fileID: 98910797}
@@ -879,7 +879,10 @@ MonoBehaviour:
   chargeAnimator: {fileID: 614840473}
   subSpeed: 1
   subDecelSpeed: -100
-  defaultBoostSpeed: 13
+  defaultBoostSpeed: 10
+  chargeBoostSpeed: 10
+  maxChargeBoostSpeed: 20
+  chargeBoostCounter: 0
   rb: {fileID: 1037081279}
   FirePoint: {fileID: 98910797}
   DefaultMissilePrefab: {fileID: 1057180831565223446, guid: 8a6dc483e32cf224d921f8a8eb725cf9,

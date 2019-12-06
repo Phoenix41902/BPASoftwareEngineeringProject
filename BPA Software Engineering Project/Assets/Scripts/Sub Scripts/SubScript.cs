@@ -28,6 +28,11 @@ public class SubScript : MonoBehaviour
     private bool isBoosting = false;
     public float defaultBoostSpeed;
 
+    // special vars for the charged boost
+    public float chargeBoostSpeed = 10f;
+    public float maxChargeBoostSpeed = 20f;
+    public float chargeBoostCounter = 0f;
+
     // rigid body
     [SerializeField]
     private Rigidbody2D rb;
@@ -60,7 +65,7 @@ public class SubScript : MonoBehaviour
     void Awake() {
         MakeSingleTon();
         //SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
-        SelectedMissiles = "big";
+        SelectedMissiles = "charge";
         SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
         SelectedArms = GameControllerScript.instance.GetSelectedArms();
     }
@@ -115,6 +120,8 @@ public class SubScript : MonoBehaviour
         if (Input.GetButtonDown("Boost")) {
             defaultBoost();
         }
+
+
     }
 
     // create delay between missile shots
@@ -270,7 +277,30 @@ public class SubScript : MonoBehaviour
     }
 
     // create charge boost
-    private void chargeBoost() {
+   private void chargeBoost() {
+        if (Input.GetButton("FireMissiles")) {
+            chargeBoostCounter += 0.15f;
+            
+            // set the values of the speed and damage
+            chargeMissileDamage = chargeCounter;
+            chargeMissileSpeed = chargeCounter;
 
+            // set the animator
+            if (chargeCounter > 0 && chargeCounter <= 10) {
+                chargeAnimator.SetTrigger("StartedCharging");
+            }
+            else if (chargeCounter > 10 && chargeCounter <= 20) {
+                chargeAnimator.SetTrigger("ContCharging");
+            }
+            else if (chargeCounter > 20) {
+                chargeAnimator.SetTrigger("FinishedCharging");
+            } else {
+                chargeAnimator.SetTrigger("Fired");
+            }
+
+            // make sure they are under the limit
+            if (chargeMissileDamage > maxChargeMissileDamage) chargeMissileDamage = 25f;
+            if (chargeMissileSpeed > maxChargeMissileSpeed) chargeMissileSpeed = 25f;
+        }
     }
 }
