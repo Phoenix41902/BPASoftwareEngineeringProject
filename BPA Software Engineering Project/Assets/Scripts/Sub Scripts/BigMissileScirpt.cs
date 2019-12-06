@@ -5,7 +5,8 @@ using UnityEngine;
 public class BigMissileScirpt : MonoBehaviour
 {
     // vars
-    private float speed = 5f;
+    public float speed;
+    public float damage;
     public Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()

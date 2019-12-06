@@ -14,17 +14,19 @@ public class SubScript : MonoBehaviour
 
     // animators
     [SerializeField]
-    private Animator subAnimator;
-    [SerializeField]
     private Animator exhaustAnimator;
     [SerializeField]
     private Animator missileAnimator;
     [SerializeField]
     private Animator chargeAnimator;
 
-    // speed and boost
+    // sub speed
     public float subSpeed = 100f;
     public float subDecelSpeed = 2f;
+
+    // boost speed and var
+    private bool isBoosting = false;
+    public float defaultBoostSpeed;
 
     // rigid body
     [SerializeField]
@@ -43,13 +45,7 @@ public class SubScript : MonoBehaviour
     public float chargeMissileDamage = 5f;
     public float maxChargeMissileDamage = 20f;
     public float maxChargeMissileSpeed = 20f;
-    public float lastChargeMissileDamage;
     private float chargeCounter = 0;
-
-    // damage values for each missile
-    public float defaultMissileDamage;
-    public float tripleMissileDamage;
-    public float bigMissileDamage;
 
     // function to create the sub
     void MakeSingleTon() {
@@ -64,7 +60,7 @@ public class SubScript : MonoBehaviour
     void Awake() {
         MakeSingleTon();
         //SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
-        SelectedMissiles = "default";
+        SelectedMissiles = "big";
         SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
         SelectedArms = GameControllerScript.instance.GetSelectedArms();
     }
@@ -91,12 +87,33 @@ public class SubScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // call movement
-        faceAndMoveToMouse();
+        // check if boosting
+        if (!isBoosting) {
+            // call movement
+            faceAndMoveToMouse();
 
-        // call missiles
-        if (canFire && Input.GetButton("FireMissiles")) {
-            StartCoroutine(fireMissiles());
+            // call missiles
+            if (canFire && Input.GetButton("FireMissiles")) {
+                StartCoroutine(fireMissiles());
+            }
+
+            // charged missiles has special call
+            if (Input.GetButton("FireMissiles")) {
+                if (SelectedMissiles == "charge") {
+                    fireChargeMissile();              
+                }
+            }
+
+            // create object after charge
+            if (Input.GetButtonUp("FireMissiles")) {
+                if (SelectedMissiles == "charge") {
+                    Instantiate(ChargeMissilePrefab, FirePoint.position, FirePoint.rotation);
+                }   
+            }
+        }
+
+        if (Input.GetButtonDown("Boost")) {
+            defaultBoost();
         }
     }
 
@@ -115,27 +132,15 @@ public class SubScript : MonoBehaviour
                 fireTripleMissile();
             }
         }
-        // charged missiles has special call
-        if (Input.GetButton("FireMissiles")) {
-            if (SelectedMissiles == "charge") {
-                fireChargeMissile();              
-            }
-        }
-        // create object after charge
-        if (Input.GetButtonUp("FireMissiles")) {
-            if (SelectedMissiles == "charge") {
-                lastChargeMissileDamage = chargeMissileDamage;
-                Instantiate(ChargeMissilePrefab, FirePoint.position, FirePoint.rotation);
-            }   
-        }
 
         // delay
+        // charge does not need delay
         canFire = false;
         yield return new WaitForSeconds(0.3f);
         canFire = true;
     }
 
-    
+    // calls after all other updates, has the button up for the charge missile
     void LateUpdate() {
         if(Input.GetButtonUp("FireMissiles")) {
             chargeMissileDamage = 5f;
@@ -212,7 +217,7 @@ public class SubScript : MonoBehaviour
     // charge missile
     private void fireChargeMissile() {
         if (Input.GetButton("FireMissiles")) {
-            chargeCounter += 0.1f;
+            chargeCounter += 0.15f;
             
             // set the values of the speed and damage
             chargeMissileDamage = chargeCounter;
@@ -235,5 +240,32 @@ public class SubScript : MonoBehaviour
             if (chargeMissileDamage > maxChargeMissileDamage) chargeMissileDamage = 25f;
             if (chargeMissileSpeed > maxChargeMissileSpeed) chargeMissileSpeed = 25f;
         }
+    }
+
+    // section for boosts
+
+    // boost function
+    private void defaultBoost() {
+        // gets mouse position
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        // gets the new direction for where the player should face
+        Vector2 direction = new Vector2(
+            mousePosition.x - transform.position.x,
+            mousePosition.y - transform.position.y
+        );
+
+        // move in that direction with a fixed speed
+        StartCoroutine(defaultBoostDelay(direction));
+    }
+
+    // create boost delay
+    IEnumerator defaultBoostDelay(Vector2 direction) {
+        rb.velocity = transform.right * defaultBoostSpeed;
+        Debug.Log(rb.velocity);
+        isBoosting = true;
+        yield return new WaitForSeconds(0.45f);
+        isBoosting = false;
     }
 }

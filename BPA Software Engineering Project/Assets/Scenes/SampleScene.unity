@@ -874,12 +874,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4dee0ad70134ff4ba1f2f8a10e740d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subAnimator: {fileID: 0}
   exhaustAnimator: {fileID: 1807538153}
   missileAnimator: {fileID: 1007652454}
   chargeAnimator: {fileID: 614840473}
   subSpeed: 1
   subDecelSpeed: -100
+  defaultBoostSpeed: 13
   rb: {fileID: 1037081279}
   FirePoint: {fileID: 98910797}
   DefaultMissilePrefab: {fileID: 1057180831565223446, guid: 8a6dc483e32cf224d921f8a8eb725cf9,
@@ -894,10 +894,6 @@ MonoBehaviour:
   chargeMissileDamage: 10
   maxChargeMissileDamage: 20
   maxChargeMissileSpeed: 20
-  lastChargeMissileDamage: 0
-  defaultMissileDamage: 5
-  tripleMissileDamage: 0
-  bigMissileDamage: 10
 --- !u!50 &1037081279
 Rigidbody2D:
   serializedVersion: 4

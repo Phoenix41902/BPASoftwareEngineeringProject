@@ -5,7 +5,8 @@ using UnityEngine;
 public class TripleMissileScript : MonoBehaviour
 {
    // vars
-    private float speed = 8f;
+    public float speed;
+    public float damage;
     public Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()

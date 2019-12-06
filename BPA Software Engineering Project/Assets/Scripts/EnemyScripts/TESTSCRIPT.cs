@@ -7,19 +7,20 @@ public class TESTSCRIPT : MonoBehaviour
     private float health = 50;
     void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == "DefaultMissile") {
-            health -= SubScript.instance.defaultMissileDamage;
+            health -= col.gameObject.GetComponent<DefaultMissilesScript>().damage;
         } else if (col.tag == "ChargeMissile") {
-            health -= SubScript.instance.lastChargeMissileDamage;
+            health -= col.gameObject.GetComponent<ChargeMissileScript>().damage;
         } else if (col.tag == "BigMissile") {
-            health -= SubScript.instance.bigMissileDamage;
+            health -= col.gameObject.GetComponent<BigMissileScirpt>().damage;
         } else if (col.tag == "TripleMissile") {
-            health -= SubScript.instance.tripleMissileDamage;
+            health -= col.gameObject.GetComponent<TripleMissileScript>().damage;
         }
+        
         Debug.Log(health);
     }
 
     void Update() {
-        if (health == 0f) {
+        if (health <= 0f) {
             Destroy(gameObject);
         }
     }

@@ -5,7 +5,8 @@ using UnityEngine;
 public class DefaultMissilesScript : MonoBehaviour
 {
     // vars
-    private float speed = 10f;
+    public float speed;
+    public float damage;
     public Rigidbody2D rb;
 
     // Start is called before the first frame update

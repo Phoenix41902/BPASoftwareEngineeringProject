@@ -11,6 +11,7 @@ public class ChargeMissileScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // get damage and speed from charge
         speed = SubScript.instance.chargeMissileSpeed;
         damage = SubScript.instance.chargeMissileDamage;
         // missile needs to fly forward
