@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrippleMissileScript : MonoBehaviour
+public class TripleMissileScript : MonoBehaviour
 {
    // vars
     private float speed = 8f;

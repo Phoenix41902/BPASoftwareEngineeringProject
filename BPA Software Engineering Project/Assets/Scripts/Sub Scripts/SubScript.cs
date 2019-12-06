@@ -33,7 +33,7 @@ public class SubScript : MonoBehaviour
     // missiles vars
     public Transform FirePoint;
     public GameObject DefaultMissilePrefab;
-    public GameObject TrippleMissilePrefab;
+    public GameObject TripleMissilePrefab;
     public GameObject BigMissilePrefab;
     public GameObject ChargeMissilePrefab;
 
@@ -47,7 +47,7 @@ public class SubScript : MonoBehaviour
 
     // damage values for each missile
     public float defaultMissileDamage;
-    public float trippleMissileDamage;
+    public float tripleMissileDamage;
     public float bigMissileDamage;
 
     // function to create the sub
@@ -63,7 +63,7 @@ public class SubScript : MonoBehaviour
     void Awake() {
         MakeSingleTon();
         //SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
-        SelectedMissiles = "big";
+        SelectedMissiles = "triple";
         SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
         SelectedArms = GameControllerScript.instance.GetSelectedArms();
     }
@@ -74,9 +74,9 @@ public class SubScript : MonoBehaviour
 
         // set what shows up on the sub
         // missiles
-        if (SelectedMissiles ==  "tripple") 
+        if (SelectedMissiles ==  "triple") 
         {
-            missileAnimator.SetTrigger("TrippleSelected");
+            missileAnimator.SetTrigger("TripleSelected");
         }
         else if (SelectedMissiles == "big") 
         {
@@ -102,8 +102,8 @@ public class SubScript : MonoBehaviour
             else if (SelectedMissiles == "big") {
                 fireBigMissile();
             } 
-            else if (SelectedMissiles == "tripple") {
-                fireTrippleMissile();
+            else if (SelectedMissiles == "triple") {
+                fireTripleMissile();
             }
         }
         // charged missiles has special call
@@ -177,17 +177,17 @@ public class SubScript : MonoBehaviour
         Instantiate(DefaultMissilePrefab, FirePoint.position, FirePoint.rotation);
     }
 
-    // tripple
-    private void fireTrippleMissile() {
-        StartCoroutine(fireTrippleMissileWaiter());
+    // triple
+    private void fireTripleMissile() {
+        StartCoroutine(fireTripleMissileWaiter());
     }
     // delay for the missiles to fire
-    IEnumerator fireTrippleMissileWaiter() {
-        Instantiate(TrippleMissilePrefab, FirePoint.position, FirePoint.rotation);
+    IEnumerator fireTripleMissileWaiter() {
+        Instantiate(TripleMissilePrefab, FirePoint.position, FirePoint.rotation);
         yield return new WaitForSeconds(0.1f);
-        Instantiate(TrippleMissilePrefab, FirePoint.position, FirePoint.rotation);
+        Instantiate(TripleMissilePrefab, FirePoint.position, FirePoint.rotation);
         yield return new WaitForSeconds(0.1f);
-        Instantiate(TrippleMissilePrefab, FirePoint.position, FirePoint.rotation);
+        Instantiate(TripleMissilePrefab, FirePoint.position, FirePoint.rotation);
     }
 
     // big missile

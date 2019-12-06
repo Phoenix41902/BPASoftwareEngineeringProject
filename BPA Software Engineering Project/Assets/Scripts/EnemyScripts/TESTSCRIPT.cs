@@ -12,8 +12,8 @@ public class TESTSCRIPT : MonoBehaviour
             health -= SubScript.instance.lastChargeMissileDamage;
         } else if (col.tag == "BigMissile") {
             health -= SubScript.instance.bigMissileDamage;
-        } else if (col.tag == "TrippleMissile") {
-            health -= SubScript.instance.trippleMissileDamage;
+        } else if (col.tag == "TripleMissile") {
+            health -= SubScript.instance.tripleMissileDamage;
         }
         Debug.Log(health);
     }
