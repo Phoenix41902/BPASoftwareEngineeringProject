@@ -65,7 +65,7 @@ public class SubScript : MonoBehaviour
     void Awake() {
         MakeSingleTon();
         //SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
-        SelectedMissiles = "charge";
+        SelectedMissiles = "default";
         SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
         SelectedArms = GameControllerScript.instance.GetSelectedArms();
     }
