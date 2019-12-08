@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 904219964253128119}
   - component: {fileID: 2714771819490840793}
   - component: {fileID: 8459917950892370923}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BigMissile
   m_TagString: BigMissile
   m_Icon: {fileID: 0}

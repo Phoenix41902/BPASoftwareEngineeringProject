@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3683020199943873332}
   - component: {fileID: 5461327822688973284}
   - component: {fileID: 9161937901352453801}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChargeMissile
   m_TagString: ChargeMissile
   m_Icon: {fileID: 0}

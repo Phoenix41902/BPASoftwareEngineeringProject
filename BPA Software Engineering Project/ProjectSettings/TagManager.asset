@@ -13,6 +13,7 @@ TagManager:
   - BigMissile
   - ChargeMissile
   - TripleMissile
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
@@ -22,12 +23,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Collector
+  - Missile
+  - Enemy
+  - Player
+  - Terrain
+  - EnemyProjectile
   - 
   - 
   - 
