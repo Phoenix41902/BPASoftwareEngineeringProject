@@ -391,6 +391,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 25, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &537994812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 537994813}
+  m_Layer: 0
+  m_Name: anglerFire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &537994813
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537994812}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.422, y: 0.161, z: -6.5234375}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1013692009}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &614840472
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,11 +816,11 @@ GameObject:
   - component: {fileID: 1013692009}
   - component: {fileID: 1013692008}
   - component: {fileID: 1013692007}
-  - component: {fileID: 1013692012}
   - component: {fileID: 1013692010}
   - component: {fileID: 1013692011}
+  - component: {fileID: 1013692012}
   m_Layer: 10
-  m_Name: Anglerfish_0
+  m_Name: AnglerFish
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -875,7 +905,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.4975471, y: -3.3064163, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 537994813}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -925,7 +956,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1013692006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7729a37e3a83ac499d25a83ef95bd15, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b33790a9cb883f479f81820707d1a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1037081275
@@ -1027,6 +1058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4dee0ad70134ff4ba1f2f8a10e740d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerIsAlive: 1
   exhaustAnimator: {fileID: 1807538153}
   missileAnimator: {fileID: 1007652454}
   chargeAnimator: {fileID: 614840473}

@@ -7,6 +7,9 @@ public class SubScript : MonoBehaviour
     // create instance of the sub for use on the other parts of the sub
     public static SubScript instance;
     // vars
+    // living var
+    public bool playerIsAlive = true;
+
     // sub attachment prefs
     private string SelectedMissiles;
     private string SelectedBoost;
@@ -95,36 +98,37 @@ public class SubScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // check if boosting
-        if (!isBoosting) {
-            // call movement
-            faceAndMoveToMouse();
+        if (playerIsAlive) {
+            // check if boosting
+            if (!isBoosting) {
+                // call movement
+                faceAndMoveToMouse();
 
-            // call missiles
-            if (canFire && Input.GetButton("FireMissiles")) {
-                StartCoroutine(fireMissiles());
-            }
+                // call missiles
+                if (canFire && Input.GetButton("FireMissiles")) {
+                    StartCoroutine(fireMissiles());
+                }
 
-            // charged missiles has special call
-            if (Input.GetButton("FireMissiles")) {
-                if (SelectedMissiles == "charge") {
-                    fireChargeMissile();              
+                // charged missiles has special call
+                if (Input.GetButton("FireMissiles")) {
+                    if (SelectedMissiles == "charge") {
+                        fireChargeMissile();              
+                    }
+                }
+
+                // create object after charge
+                if (Input.GetButtonUp("FireMissiles")) {
+                    if (SelectedMissiles == "charge") {
+                        Instantiate(ChargeMissilePrefab, FirePoint.position, FirePoint.rotation);
+                    }   
                 }
             }
 
-            // create object after charge
-            if (Input.GetButtonUp("FireMissiles")) {
-                if (SelectedMissiles == "charge") {
-                    Instantiate(ChargeMissilePrefab, FirePoint.position, FirePoint.rotation);
-                }   
+            if (Input.GetButtonDown("Boost")) {
+                defaultBoost();
             }
         }
-
-        if (Input.GetButtonDown("Boost")) {
-            defaultBoost();
-        }
-
-
+        checkForDeath();
     }
 
     // create delay between missile shots
@@ -304,6 +308,14 @@ public class SubScript : MonoBehaviour
             // make sure they are under the limit
             if (chargeMissileDamage > maxChargeMissileDamage) chargeMissileDamage = 25f;
             if (chargeMissileSpeed > maxChargeMissileSpeed) chargeMissileSpeed = 25f;
+        }
+    }
+
+    // death function
+    void checkForDeath() {
+        // check health
+        if (subHealth <= 0) {
+            playerIsAlive = false;
         }
     }
 }
