@@ -176,7 +176,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202883781}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.45, y: 0.02, z: -2.4569206}
+  m_LocalPosition: {x: 11.19, y: -0, z: -2.4569206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -389,7 +389,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20, y: 1}
+  m_Size: {x: 25, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &614840472
 GameObject:
@@ -517,7 +517,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661649535}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.42, y: -0.01, z: -2.4569206}
+  m_LocalPosition: {x: -11.23, y: -0.01, z: -2.4569206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -672,7 +672,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20, y: 1}
+  m_Size: {x: 25, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1007652452
 GameObject:
@@ -1032,6 +1032,7 @@ MonoBehaviour:
   chargeAnimator: {fileID: 614840473}
   subSpeed: 1
   subDecelSpeed: -100
+  subHealth: 3
   defaultBoostSpeed: 10
   chargeBoostSpeed: 10
   maxChargeBoostSpeed: 20
@@ -1374,6 +1375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 1971013946}
+  damage: 0
 --- !u!61 &1971013945
 BoxCollider2D:
   m_ObjectHideFlags: 0

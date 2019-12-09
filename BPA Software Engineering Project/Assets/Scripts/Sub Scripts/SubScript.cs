@@ -24,6 +24,9 @@ public class SubScript : MonoBehaviour
     public float subSpeed = 100f;
     public float subDecelSpeed = 2f;
 
+    // sub health
+    public float subHealth = 3;
+
     // boost speed and var
     private bool isBoosting = false;
     public float defaultBoostSpeed;
