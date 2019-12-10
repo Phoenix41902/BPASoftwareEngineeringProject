@@ -18,12 +18,13 @@ public class AnglerFishScript : MonoBehaviour
     private Animator anglerAnim;
 
     void fireLazer() {
-        Instantiate(lazerPrefab, FirePoint.position, FirePoint.rotation);
+        Instantiate(lazerPrefab, FirePoint.transform.position, FirePoint.transform.rotation);
     }
 
     void Update() {
         if (Input.GetButtonDown("Jump")) {
             fireLazer();
+            anglerAnim.SetTrigger("fire");
         }
     }
 }
