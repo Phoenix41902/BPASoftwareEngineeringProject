@@ -12,6 +12,7 @@ public class AnglerFishScript : MonoBehaviour
     [SerializeField]
     public GameObject lazerPrefab;
     public GameObject FirePoint;
+    public GameObject TriggerPoint;
 
     // animator
     [SerializeField]

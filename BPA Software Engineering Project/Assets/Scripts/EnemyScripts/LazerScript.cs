@@ -9,7 +9,7 @@ public class LazerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody.velocity = -transform.right * 2;
+        rigidbody.velocity = -transform.right * 4;
     }
 
     // Update is called once per frame
