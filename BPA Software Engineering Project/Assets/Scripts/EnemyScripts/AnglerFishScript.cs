@@ -5,27 +5,12 @@ using UnityEngine;
 public class AnglerFishScript : MonoBehaviour
 {
     // set up parts of the fish
-    private float health = 30f;
-    private float speed = 3f;
+    public float Health;
+    public float Speed;
 
-    // prefab for fireing
-    [SerializeField]
-    public GameObject lazerPrefab;
-    public GameObject FirePoint;
-    public GameObject TriggerPoint;
-
-    // animator
-    [SerializeField]
-    private Animator anglerAnim;
-
-    void fireLazer() {
-        Instantiate(lazerPrefab, FirePoint.transform.position, FirePoint.transform.rotation);
-    }
-
+    // counter for how much it has patroled
     void Update() {
-        if (Input.GetButtonDown("Jump")) {
-            fireLazer();
-            anglerAnim.SetTrigger("fire");
-        }
+        // move the fish up and down
+
     }
 }

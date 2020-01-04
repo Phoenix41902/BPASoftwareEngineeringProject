@@ -12,12 +12,6 @@ public class LazerScript : MonoBehaviour
         rigidbody.velocity = -transform.right * 4;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == "PlayerSub" || col.tag == "Terrain") {
             if (col.tag == "PlayerSub") {

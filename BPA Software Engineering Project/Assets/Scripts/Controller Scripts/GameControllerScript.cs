@@ -19,12 +19,12 @@ public class GameControllerScript : MonoBehaviour
 
     // function to make only one game controller per scene
     void MakeSingleTon() {
-        if(instance != null) {
-            Destroy(gameObject);
-        } else {
+        //if(instance != null) {
+        //    Destroy(gameObject);
+        //} else {
             instance = this;
             DontDestroyOnLoad(gameObject);
-        }
+        //}
     }
 
     // function to set up default player prefs and unlocks

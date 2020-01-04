@@ -18,7 +18,7 @@ public class DefaultMissilesScript : MonoBehaviour
 
     // if it hits something
     void OnTriggerEnter2D(Collider2D col) {
-        if (col.tag == "Enemy") {
+        if (col.tag == "Enemy" || col.tag == "Terrain") {
             Destroy(gameObject);
         }
     }

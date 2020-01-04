@@ -13,7 +13,6 @@ public class SubScript : MonoBehaviour
     // sub attachment prefs
     private string SelectedMissiles;
     private string SelectedBoost;
-    private string SelectedArms;
 
     // animators
     [SerializeField]
@@ -72,8 +71,8 @@ public class SubScript : MonoBehaviour
         MakeSingleTon();
         //SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
         SelectedMissiles = "default";
-        SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
-        SelectedArms = GameControllerScript.instance.GetSelectedArms();
+        // SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
+        SelectedBoost = "default";
     }
 
     // set pos to 0, 0 (REMOVE LATER)
