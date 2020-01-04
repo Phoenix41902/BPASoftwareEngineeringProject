@@ -12,6 +12,6 @@ public class GameplayCameraScript : MonoBehaviour
 
     void LateUpdate() {
         // WORKS FINE JUST TURNED OFF UNTIL BACKGROUNDS ARE ADDED
-        // transform.position = new Vector3(follow.position.x, follow.position.y, transform.position.z);
+         transform.position = new Vector3(follow.position.x, follow.position.y, transform.position.z);
     }
 }

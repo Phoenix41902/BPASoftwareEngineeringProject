@@ -72,8 +72,8 @@ public class SubScript : MonoBehaviour
         MakeSingleTon();
         //SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
         SelectedMissiles = "default";
-        SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
-        SelectedArms = GameControllerScript.instance.GetSelectedArms();
+        SelectedBoost = "default";
+        SelectedArms = "default";
     }
 
     // set pos to 0, 0 (REMOVE LATER)
