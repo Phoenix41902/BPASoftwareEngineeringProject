@@ -73,6 +73,7 @@ public class SubScript : MonoBehaviour
         SelectedMissiles = "default";
         // SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
         SelectedBoost = "default";
+        SelectedArms = "default";
     }
 
     // set pos to 0, 0 (REMOVE LATER)
