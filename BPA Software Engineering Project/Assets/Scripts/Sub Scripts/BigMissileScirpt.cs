@@ -16,7 +16,7 @@ public class BigMissileScirpt : MonoBehaviour
     }
     // if it hits something
     void OnTriggerEnter2D(Collider2D col) {
-        if (col.tag == "Enemy") {
+        if (col.tag == "Enemy" || ) {
             Destroy(gameObject);
         }
     }

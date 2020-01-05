@@ -9,7 +9,7 @@ public class LazerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody.velocity = -transform.right * 4;
+        rigidbody.velocity = -transform.right * 10;
     }
 
     void OnTriggerEnter2D(Collider2D col) {

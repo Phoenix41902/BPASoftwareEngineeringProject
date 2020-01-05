@@ -19,12 +19,12 @@ public class GameControllerScript : MonoBehaviour
 
     // function to make only one game controller per scene
     void MakeSingleTon() {
-        //if(instance != null) {
-        //    Destroy(gameObject);
-        //} else {
+        if(instance != null) {
+            Destroy(gameObject);
+        } else {
             instance = this;
             DontDestroyOnLoad(gameObject);
-        //}
+        }
     }
 
     // function to set up default player prefs and unlocks
@@ -45,11 +45,6 @@ public class GameControllerScript : MonoBehaviour
         PlayerPrefs.SetString(SELECTED_MISSILE, mis);
     }
 
-    // arms
-    public void SetSelectedArms(string arms) {
-        PlayerPrefs.SetString(SELECTED_ARMS, arms);
-    }
-
     // boost
     public void SetSelectedBoost(string bst) {
         PlayerPrefs.SetString(SELECTED_BOOST, bst);
@@ -59,11 +54,6 @@ public class GameControllerScript : MonoBehaviour
     // missiles
     public string GetSelectedMissile() {
         return PlayerPrefs.GetString(SELECTED_MISSILE);
-    }
-
-    // arms
-    public string GetSelectedArms() {
-        return PlayerPrefs.GetString(SELECTED_ARMS);
     }
 
     // boost

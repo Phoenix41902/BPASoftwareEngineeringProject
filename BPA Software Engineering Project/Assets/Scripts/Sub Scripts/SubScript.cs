@@ -50,12 +50,17 @@ public class SubScript : MonoBehaviour
     public GameObject ChargeMissilePrefab;
     private bool canFire = true;
 
+    // missile damage vars
+    public float DefaultMissileDamage;
+    public float TripleMissileDamage;
+    public float BigMissileDamage;
+
     // special vars for the charged missile
     public float chargeMissileSpeed = 10f;
-    public float chargeMissileDamage = 5f;
-    public float maxChargeMissileDamage = 20f;
+    public float chargeMissileDamage = 1f;
+    public float maxChargeMissileDamage = 4f;
     public float maxChargeMissileSpeed = 20f;
-    private float chargeCounter = 0;
+    public float chargeCounter = 0;
 
     // function to create the sub
     void MakeSingleTon() {
@@ -68,18 +73,16 @@ public class SubScript : MonoBehaviour
 
     // set the player prefs
     void Awake() {
+        Debug.Log(GameControllerScript.instance.GetSelectedBoost());
+        GameControllerScript.instance.SetSelectedMissile("big");
         MakeSingleTon();
-        //SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
-        SelectedMissiles = "default";
-        // SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
-        SelectedBoost = "default";
-        SelectedArms = "default";
+        SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
+        //SelectedMissiles = "default";
+        SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
+        //SelectedBoost = "default";
     }
 
-    // set pos to 0, 0 (REMOVE LATER)
     void Start() {
-        transform.position = new Vector3(0f, 0f, 0f);
-
         // set what shows up on the sub
         // missiles
         if (SelectedMissiles ==  "triple") 
@@ -231,17 +234,17 @@ public class SubScript : MonoBehaviour
     // charge missile
     private void fireChargeMissile() {
         if (Input.GetButton("FireMissiles")) {
-            chargeCounter += 0.15f;
+            chargeCounter += 0.01f;
             
             // set the values of the speed and damage
             chargeMissileDamage = chargeCounter;
-            chargeMissileSpeed = chargeCounter;
+            chargeMissileSpeed = chargeCounter * 2;
 
             // set the animator
-            if (chargeCounter > 0 && chargeCounter <= 10) {
+            if (chargeCounter > 0 && chargeCounter <= 1) {
                 chargeAnimator.SetTrigger("StartedCharging");
             }
-            else if (chargeCounter > 10 && chargeCounter <= 20) {
+            else if (chargeCounter > 2 && chargeCounter <= 4) {
                 chargeAnimator.SetTrigger("ContCharging");
             }
             else if (chargeCounter > 20) {
@@ -251,7 +254,7 @@ public class SubScript : MonoBehaviour
             }
 
             // make sure they are under the limit
-            if (chargeMissileDamage > maxChargeMissileDamage) chargeMissileDamage = 25f;
+            if (chargeMissileDamage > maxChargeMissileDamage) chargeMissileDamage = 5f;
             if (chargeMissileSpeed > maxChargeMissileSpeed) chargeMissileSpeed = 25f;
         }
     }
