@@ -10,23 +10,43 @@ public class TwilightGameController : MonoBehaviour
     // function to make only one game controller per scene
     void MakeSingleTon()
     {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        instance = this;
     }
 
     // on start
     private void Awake()
     {
         MakeSingleTon();
+        DoorOne.sprite = DoorSprites[DoorHealth];
     }
 
     // create the arrays of patrol points
     public Transform[] FirstAnglerRoomPoints;
+
+    // create the states of the door
+    public Sprite[] DoorSprites;
+    public int DoorHealth = 4;
+
+    // creates the section where the first door control is
+    public SpriteRenderer DoorOne;
+    public GameObject DoorOneObj;
+
+    // function to lower the door
+    public void AnglerLowerDoor()
+    {
+       if (DoorHealth >= 0)
+        {
+            DoorHealth -= 1;
+            DoorOne.sprite = DoorSprites[DoorHealth];
+        } else
+        {
+            Destroy(DoorOneObj);
+        }
+    }
+
+    private void Update()
+    {
+        // section for the first door
+        
+    }
 }

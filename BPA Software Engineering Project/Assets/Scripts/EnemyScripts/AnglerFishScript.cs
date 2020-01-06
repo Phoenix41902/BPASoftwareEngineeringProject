@@ -22,6 +22,7 @@ public class AnglerFishScript : MonoBehaviour
     {
         if (Health <= 0)
         {
+            TwilightGameController.instance.AnglerLowerDoor();
             Destroy(gameObject);
         }
     }
