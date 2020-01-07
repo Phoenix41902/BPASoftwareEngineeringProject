@@ -38,6 +38,10 @@ public class SubScript : MonoBehaviour
     public float maxChargeBoostSpeed = 20f;
     public float chargeBoostCounter = 0f;
 
+    // health bar sprite
+    public SpriteRenderer HealthBar;
+    public Sprite[] HealthBars;
+
     // rigid body
     [SerializeField]
     private Rigidbody2D rb;
@@ -320,5 +324,11 @@ public class SubScript : MonoBehaviour
         if (subHealth <= 0) {
             playerIsAlive = false;
         }
+
+        // render the sprite
+        if (subHealth == 4) HealthBar.sprite = HealthBars[3];
+        if (subHealth == 3) HealthBar.sprite = HealthBars[2];
+        if (subHealth == 2) HealthBar.sprite = HealthBars[1];
+        if (subHealth == 1) HealthBar.sprite = HealthBars[0];
     }
 }

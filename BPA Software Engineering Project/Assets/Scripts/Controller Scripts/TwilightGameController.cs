@@ -10,7 +10,10 @@ public class TwilightGameController : MonoBehaviour
     // function to make only one game controller per scene
     void MakeSingleTon()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 
     // on start
