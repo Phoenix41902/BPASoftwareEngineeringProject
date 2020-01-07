@@ -68,25 +68,21 @@ public class SubScript : MonoBehaviour
 
     // function to create the sub
     void MakeSingleTon() {
-        if(instance != null) {
-            Destroy(gameObject);
-        } else {
-            instance = this;
-        }
+        instance = this;
     }
 
     // set the player prefs
     void Awake() {
+       MakeSingleTon();
+    }
+
+    void Start() {
         Debug.Log(GameControllerScript.instance.GetSelectedBoost());
         GameControllerScript.instance.SetSelectedMissile("big");
-        MakeSingleTon();
         SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
         //SelectedMissiles = "default";
         SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
         //SelectedBoost = "default";
-    }
-
-    void Start() {
         // set what shows up on the sub
         // missiles
         if (SelectedMissiles ==  "triple") 
