@@ -341,6 +341,12 @@ MonoBehaviour:
   chargeBoostSpeed: 10
   maxChargeBoostSpeed: 20
   chargeBoostCounter: 0
+  HealthBar: {fileID: 0}
+  HealthBars:
+  - {fileID: -8227546954408941770, guid: 44ab11d97ab5a1b4597e944e26c9f48a, type: 3}
+  - {fileID: -3178617384780871938, guid: 44ab11d97ab5a1b4597e944e26c9f48a, type: 3}
+  - {fileID: 5032351099696674128, guid: 44ab11d97ab5a1b4597e944e26c9f48a, type: 3}
+  - {fileID: 5856585005746452560, guid: 44ab11d97ab5a1b4597e944e26c9f48a, type: 3}
   rb: {fileID: 1958488407275960196}
   FirePoint: {fileID: 1958488406603509622}
   DefaultMissilePrefab: {fileID: 1057180831565223446, guid: 8a6dc483e32cf224d921f8a8eb725cf9,

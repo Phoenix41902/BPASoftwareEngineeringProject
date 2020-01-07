@@ -40,7 +40,10 @@ public class TwilightGameController : MonoBehaviour
        if (DoorHealth >= 0)
         {
             DoorHealth -= 1;
-            DoorOne.sprite = DoorSprites[DoorHealth];
+            if (DoorHealth == 0)
+            {
+                DoorOne.sprite = DoorSprites[DoorHealth];
+            }         
         } else
         {
             Destroy(DoorOneObj);

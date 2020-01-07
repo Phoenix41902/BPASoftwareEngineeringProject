@@ -12,7 +12,7 @@ public class GameControllerScript : MonoBehaviour
     private const string SELECTED_BOOST = "boost";
     private const string SELECTED_ARMS = "arms";
 
-    void Start() {
+    void Awake() {
         MakeSingleTon();
         StartGameForFirstTime();
     }

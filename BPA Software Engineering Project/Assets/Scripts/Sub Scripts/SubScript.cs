@@ -77,10 +77,9 @@ public class SubScript : MonoBehaviour
     }
 
     void Start() {
-        Debug.Log(GameControllerScript.instance.GetSelectedBoost());
-        GameControllerScript.instance.SetSelectedMissile("big");
+        GameControllerScript.instance.SetSelectedMissile("default");
         SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
-        //SelectedMissiles = "default";
+        //SelectedMissiles = "big";
         SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
         //SelectedBoost = "default";
         // set what shows up on the sub
