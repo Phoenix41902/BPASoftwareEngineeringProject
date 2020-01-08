@@ -40,13 +40,40 @@ public class TwilightGameController : MonoBehaviour
        if (DoorHealth >= 0)
         {
             DoorHealth -= 1;
-            if (DoorHealth == 0)
+            if (DoorHealth >= 0)
             {
                 DoorOne.sprite = DoorSprites[DoorHealth];
             }         
         } else
         {
             Destroy(DoorOneObj);
+        }
+    }
+ 
+    // section for getting to the key
+    // jellys
+    public GameObject guardObj;
+    public SpriteRenderer guard;
+    public Sprite[] guardPos;
+    private int currentJelly = 0;
+
+    public void JellyKill(int JellyIndex)
+    {
+        if (JellyIndex == currentJelly)
+        {
+            currentJelly += 1;
+            if (currentJelly == 3)
+            {
+                Destroy(guardObj);
+            }
+            else
+            {
+                guard.sprite = guardPos[currentJelly];
+            }        
+        }
+        else
+        {
+            SubScript.instance.subHealth = 0;
         }
     }
 

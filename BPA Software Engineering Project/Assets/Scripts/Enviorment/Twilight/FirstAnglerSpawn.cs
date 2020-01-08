@@ -12,6 +12,7 @@ public class FirstAnglerSpawn : MonoBehaviour
     // timer vars
     public float StartWaitTime;
     private float waitTime;
+    private int anglerCounter = 0;
 
     // spawn the angler fish
     private void spawn()
@@ -25,7 +26,11 @@ public class FirstAnglerSpawn : MonoBehaviour
         // spawn a fish every x seconds
         if (waitTime <= 0)
         {
-            spawn();
+            if (anglerCounter <= 10)
+            {
+                spawn();
+                anglerCounter++;
+            }
             waitTime = StartWaitTime;
         }
         else
