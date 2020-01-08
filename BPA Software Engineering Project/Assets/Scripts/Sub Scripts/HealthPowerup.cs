@@ -5,8 +5,8 @@ using UnityEngine;
 public class HealthPowerup : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D col) {
-        if (col.tag == "PlayerSub") {
-            Debug.Log("asdf");
+        if (SubScript.instance.subHealth < 5) {
+            SubScript.instance.subHealth++;
         }
     }
 }
