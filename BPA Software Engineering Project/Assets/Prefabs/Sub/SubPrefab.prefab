@@ -366,6 +366,7 @@ MonoBehaviour:
   maxChargeMissileSpeed: 20
   chargeCounter: 0
   RespawnPoint: {fileID: 0}
+  RespawnText: {fileID: 0}
 --- !u!50 &1958488407275960196
 Rigidbody2D:
   serializedVersion: 4

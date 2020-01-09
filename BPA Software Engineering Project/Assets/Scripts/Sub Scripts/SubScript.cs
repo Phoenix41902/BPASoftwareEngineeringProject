@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SubScript : MonoBehaviour
 {
@@ -315,24 +316,38 @@ public class SubScript : MonoBehaviour
 
     // respawn point
     public Transform RespawnPoint;
+    public Text RespawnText;
 
     // respawn function
     void respawn()
     {
-
+        // call the function to continue
+        StartCoroutine(respawnDelay());
     }
 
     // respawn coroutine
-    //IEnumerator respawnDelay()
-    //{
-
-    //}
+    IEnumerator respawnDelay()
+    {
+        // message
+        RespawnText.text = "RESPAWNING";
+        rb.velocity = new Vector2(0, 0);
+        yield return new WaitForSeconds(1f);
+        subHealth = 1;
+        yield return new WaitForSeconds(1f);
+        subHealth = 2;
+        yield return new WaitForSeconds(1f);
+        subHealth = 3;
+        transform.position = RespawnPoint.position;
+        playerIsAlive = true;
+        RespawnText.text = "";      
+    }
 
     // death function
     void checkForDeath() {
         // check health
         if (subHealth <= 0) {
             playerIsAlive = false;
+            respawn();
         }
 
         // render the sprite
