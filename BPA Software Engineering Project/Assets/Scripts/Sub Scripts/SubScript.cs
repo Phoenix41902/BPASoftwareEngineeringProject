@@ -313,6 +313,21 @@ public class SubScript : MonoBehaviour
         }
     }
 
+    // respawn point
+    public Transform RespawnPoint;
+
+    // respawn function
+    void respawn()
+    {
+
+    }
+
+    // respawn coroutine
+    //IEnumerator respawnDelay()
+    //{
+
+    //}
+
     // death function
     void checkForDeath() {
         // check health
