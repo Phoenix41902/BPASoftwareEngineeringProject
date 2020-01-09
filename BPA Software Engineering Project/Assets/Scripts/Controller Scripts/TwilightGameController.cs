@@ -77,6 +77,18 @@ public class TwilightGameController : MonoBehaviour
         }
     }
 
+    // section for the boss key
+    public GameObject[] KeyedDoors;
+
+    // open the doors
+    public void OpenDoors()
+    {
+        for(int i = 0; i < KeyedDoors.Length; i++)
+        {
+            Destroy(KeyedDoors[i]);
+        }
+    }
+
     private void Update()
     {
         // section for the first door

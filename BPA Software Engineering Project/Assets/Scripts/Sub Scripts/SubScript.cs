@@ -77,7 +77,7 @@ public class SubScript : MonoBehaviour
     }
 
     void Start() {
-        GameControllerScript.instance.SetSelectedMissile("default");
+        GameControllerScript.instance.SetSelectedMissile("triple");
         SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
         //SelectedMissiles = "big";
         SelectedBoost = GameControllerScript.instance.GetSelectedBoost();

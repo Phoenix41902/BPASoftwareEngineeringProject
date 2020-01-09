@@ -337,7 +337,7 @@ MonoBehaviour:
   subSpeed: 1
   subDecelSpeed: -100
   subHealth: 3
-  defaultBoostSpeed: 100
+  defaultBoostSpeed: 17
   chargeBoostSpeed: 10
   maxChargeBoostSpeed: 20
   chargeBoostCounter: 0
