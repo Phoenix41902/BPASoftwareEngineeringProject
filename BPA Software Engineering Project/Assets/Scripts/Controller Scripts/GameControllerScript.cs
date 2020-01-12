@@ -11,6 +11,7 @@ public class GameControllerScript : MonoBehaviour
     private const string SELECTED_MISSILE = "missile";
     private const string SELECTED_BOOST = "boost";
     private const string SELECTED_ARMS = "arms";
+    private const string CURRENT_STAGE = "stage";
 
     void Awake() {
         MakeSingleTon();
@@ -28,6 +29,7 @@ public class GameControllerScript : MonoBehaviour
             PlayerPrefs.SetString(SELECTED_MISSILE, "default");
             PlayerPrefs.SetString(SELECTED_BOOST, "default");
             PlayerPrefs.SetString(SELECTED_ARMS, "default");
+            PlayerPrefs.SetString(CURRENT_STAGE, "one");
             PlayerPrefs.SetInt("GameHasStarted", 0);
         }
     }
@@ -56,5 +58,13 @@ public class GameControllerScript : MonoBehaviour
         return PlayerPrefs.GetString(SELECTED_BOOST);
     }
 
+    public void SetStage(string stg)
+    {
+        PlayerPrefs.SetString(CURRENT_STAGE, stg);
+    }
 
+    public string GetStage()
+    {
+        return PlayerPrefs.GetString(CURRENT_STAGE);
+    }
 }

@@ -94,4 +94,9 @@ public class TwilightGameController : MonoBehaviour
         // section for the first door
         
     }
+
+    private void Start()
+    {
+        guard.sprite = guardPos[0];
+    }
 }

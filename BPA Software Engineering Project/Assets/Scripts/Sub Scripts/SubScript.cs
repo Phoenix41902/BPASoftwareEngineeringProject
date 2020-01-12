@@ -78,22 +78,28 @@ public class SubScript : MonoBehaviour
     }
 
     void Start() {
-        GameControllerScript.instance.SetSelectedMissile("triple");
+        StartCoroutine(StartSub());
+    }
+
+    IEnumerator StartSub()
+    {
+        yield return new WaitForEndOfFrame();
         SelectedMissiles = GameControllerScript.instance.GetSelectedMissile();
         //SelectedMissiles = "big";
         SelectedBoost = GameControllerScript.instance.GetSelectedBoost();
         //SelectedBoost = "default";
         // set what shows up on the sub
         // missiles
-        if (SelectedMissiles ==  "triple") 
+        if (SelectedMissiles == "triple")
         {
             missileAnimator.SetTrigger("TripleSelected");
         }
-        else if (SelectedMissiles == "big") 
+        else if (SelectedMissiles == "big")
         {
             missileAnimator.SetTrigger("BigSelected");
-        } 
-        else if (SelectedMissiles == "charge") {
+        }
+        else if (SelectedMissiles == "charge")
+        {
             missileAnimator.SetTrigger("ChargeSelected");
         }
     }

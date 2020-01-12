@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MainMenu.unity
+    guid: c2a3a19d0bf84f54ea17160cfc0610ad
+  - enabled: 1
+    path: Assets/Scenes/TutorialAndTopZone.unity
+    guid: 85888579d11b7514ea158c4b31717843
+  - enabled: 1
+    path: Assets/Scenes/TwilightZone.unity
+    guid: 3cdef97be8c1859419746c4179f0e8cc
+  - enabled: 1
+    path: Assets/Scenes/AbyssalZone.unity
+    guid: f0133530010bd1246acd9e4fc65faa19
   m_configObjects: {}

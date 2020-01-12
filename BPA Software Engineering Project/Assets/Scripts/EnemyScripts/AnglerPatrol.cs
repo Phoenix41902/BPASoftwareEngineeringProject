@@ -8,7 +8,7 @@ public class AnglerPatrol : MonoBehaviour
     public float Speed;
 
     // places where we can move
-    private Transform[] MoveSpots = TwilightGameController.instance.FirstAnglerRoomPoints;
+    private Transform[] MoveSpots;
     private int randomSpot;
 
     // wait times
@@ -18,6 +18,7 @@ public class AnglerPatrol : MonoBehaviour
     // start
     void Start()
     {
+        MoveSpots = TwilightGameController.instance.FirstAnglerRoomPoints;
         // set wait time
         waitTime = StartWaitTime;
         // get a random spot to move towards
