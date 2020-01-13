@@ -11,6 +11,17 @@ public class PauseScript : MonoBehaviour
     // pause menu UI
     public GameObject PauseMenuUI;
 
+    // fade to next level
+    public Animator anim;
+
+    IEnumerator fadeOut()
+    {
+        Time.timeScale = 1f;
+        anim.SetTrigger("End");
+        yield return new WaitForSeconds(3f);      
+        SceneManager.LoadScene("MainMenu");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -47,8 +58,7 @@ public class PauseScript : MonoBehaviour
     public void LoadMenu()
     {
         // ADD WHEN MENU
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(fadeOut());
     }
 
     // Quit game

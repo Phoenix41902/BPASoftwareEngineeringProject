@@ -5,13 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class SelectedBig : MonoBehaviour
 {
+    // fade to next level
+    public Animator anim;
+
+    IEnumerator fadeOut()
+    {
+        anim.SetTrigger("End");
+        yield return new WaitForSeconds(3f);
+        GameControllerScript.instance.SetSelectedMissile("big");
+        GameControllerScript.instance.SetStage("two");
+        SceneManager.LoadScene("TwilightZone");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (TutorialScript.instance.CanSelectedMissile)
         {
-            GameControllerScript.instance.SetSelectedMissile("big");
-            GameControllerScript.instance.SetStage("two");
-            SceneManager.LoadScene("TwilightZone");
+            StartCoroutine(fadeOut());
         }
     }
 }

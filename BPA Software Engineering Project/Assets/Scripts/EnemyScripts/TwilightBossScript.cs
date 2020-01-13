@@ -115,7 +115,7 @@ public class TwilightBossScript : MonoBehaviour
         if (Health <= 0)
         {
             BossCanvas.SetActive(false);
-            Instantiate(Portal, FirePoint.transform.position, FirePoint.transform.rotation);
+            Portal.transform.position = Portal.transform.position + new Vector3(0, -20, 0);
             Destroy(gameObject);
         }
     }

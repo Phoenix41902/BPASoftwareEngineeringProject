@@ -5,14 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
-    public void NewGame()
-    {
-        GameControllerScript.instance.SetStage("one");
-        SceneManager.LoadScene("TutorialAndTopZone");
-    }
+    public Animator anim;
 
-    public void LoadGame()
+    IEnumerator fadeOutLoad()
     {
+        anim.SetTrigger("End");
+        yield return new WaitForSeconds(3f);
         if (GameControllerScript.instance.GetStage() == "one")
         {
             SceneManager.LoadScene("TutorialAndTopZone");
@@ -27,6 +25,31 @@ public class MainMenuScript : MonoBehaviour
         }
     }
 
+    IEnumerator fadeOutNew()
+    {
+        anim.SetTrigger("End");
+        yield return new WaitForSeconds(3f);
+        GameControllerScript.instance.SetStage("one");
+        SceneManager.LoadScene("TutorialAndTopZone");
+    }
+
+    IEnumerator fadeOutMenu()
+    {
+        anim.SetTrigger("End");
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void NewGame()
+    {
+        StartCoroutine(fadeOutNew());
+    }
+
+    public void LoadGame()
+    {
+        StartCoroutine(fadeOutLoad());
+    }
+
     public void QuitGame()
     {
         Application.Quit();
@@ -34,6 +57,6 @@ public class MainMenuScript : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(fadeOutMenu());
     }
 }

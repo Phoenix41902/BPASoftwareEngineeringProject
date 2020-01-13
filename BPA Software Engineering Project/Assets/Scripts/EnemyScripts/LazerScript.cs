@@ -6,6 +6,7 @@ public class LazerScript : MonoBehaviour
 {
     public Rigidbody2D rigidbody;
     public float damage;
+    private double time = 40;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,15 @@ public class LazerScript : MonoBehaviour
             if (col.tag == "PlayerSub") {
                 SubScript.instance.subHealth--;
             }
+            Destroy(gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        time -= Time.deltaTime;
+        if (time <= 0)
+        {
             Destroy(gameObject);
         }
     }

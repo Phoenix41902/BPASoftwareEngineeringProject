@@ -59,21 +59,14 @@ public class TwilightGameController : MonoBehaviour
 
     public void JellyKill(int JellyIndex)
     {
-        if (JellyIndex == currentJelly)
+        currentJelly += 1;
+        if (currentJelly > 2)
         {
-            currentJelly += 1;
-            if (currentJelly == 3)
-            {
-                Destroy(guardObj);
-            }
-            else
-            {
-                guard.sprite = guardPos[currentJelly];
-            }        
+            Destroy(guardObj);
         }
         else
         {
-            SubScript.instance.subHealth = 0;
+            guard.sprite = guardPos[currentJelly];
         }
     }
 
