@@ -33,6 +33,9 @@ public class SecondAnglerBossScript : MonoBehaviour
     private bool canFire = false;
     private bool hasChecked = false;
 
+    // Key
+    public GameObject Key;
+
     private void Start()
     {
         fightHasStarted = AbyssalController.instance.HasEnteredMiniBossRoom;
@@ -112,16 +115,17 @@ public class SecondAnglerBossScript : MonoBehaviour
         if (Health <= 0)
         {
             BossCanvas.SetActive(false);
+            Instantiate(Key, FirePoint.transform.position, FirePoint.transform.rotation);
             Destroy(gameObject);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // check if it is a player missile
-        if (collision.tag == "DefaultMissile")
-        {
-            Health -= SubScript.instance.DefaultMissileDamage;
-        }
+        // take damage
+        if (collision.tag == "ChargeMissile") Health -= SubScript.instance.chargeMissileDamage;
+        if (collision.tag == "DefaultMissile") Health -= SubScript.instance.DefaultMissileDamage;
+        if (collision.tag == "TripleMissile") Health -= SubScript.instance.TripleMissileDamage;
+        if (collision.tag == "BigMissile") Health -= SubScript.instance.BigMissileDamage;
     }
 }

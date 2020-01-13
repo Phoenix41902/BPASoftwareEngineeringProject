@@ -99,4 +99,7 @@ public class TwilightGameController : MonoBehaviour
     {
         guard.sprite = guardPos[0];
     }
+
+    // Section for boss
+    public bool BossFightStarted = false;
 }

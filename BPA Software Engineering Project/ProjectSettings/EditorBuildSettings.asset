@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AbyssalZone.unity
     guid: f0133530010bd1246acd9e4fc65faa19
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 434a691e94132554a9fdb2947677c6a9
   m_configObjects: {}
