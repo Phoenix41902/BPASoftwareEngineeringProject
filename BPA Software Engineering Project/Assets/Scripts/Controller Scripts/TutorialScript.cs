@@ -45,7 +45,7 @@ public class TutorialScript : MonoBehaviour
 
         if (HasEnteredThridRoom)
         {
-            StartCoroutine(ThridText());
+            StartCoroutine(ThirdText());
             HasEnteredThridRoom = false;
         }
 
@@ -70,11 +70,11 @@ public class TutorialScript : MonoBehaviour
         // make it so the player cannot move
         SubScript.instance.playerIsAlive = false;
         // first text
-        TutorialDialog.text = "Good evening. I know you do not know who I am, but I know who you are. Earlier today our oceans were flooded with nightmares beyond anything we were ever prepared for.";
+        TutorialDialog.text = "Hello D-8739. I know you don't know who I am, but I know who you are. Earlier today our oceans were suddenly flooded with creatures beyond any of our worst nightmares.";
         yield return new WaitForSeconds(4f);
-        TutorialDialog.text = "Your were an excelent sub driver in your day. We need you to use this one to stop the nightmares.";
+        TutorialDialog.text = "You were one of the best submarine operators in your day, D-8739. We need you to exterminate these nightmarish things for us.";
         yield return new WaitForSeconds(4f);
-        TutorialDialog.text = "This sub is controlled with a keyboard and mouse. I will fill you in on how to use it. First right click to move towards your cursor, then head to the next room";
+        TutorialDialog.text = "This submarine is controlled with a keyboard and mouse. Right click to move towards your cursor, then head to the next room.";
         SubScript.instance.playerIsAlive = true;
         yield return new WaitForSeconds(8f);
         Destroy(FirstDoor);
@@ -82,29 +82,29 @@ public class TutorialScript : MonoBehaviour
 
     IEnumerator SecondText()
     {
-        TutorialDialog.text = "Now that you can move, you need to learn to shoot. Left click to fire a missile in which ever direction you are facing.";
+        TutorialDialog.text = "Now that you can move, you need to learn how to shoot. Left click to fire a missile in whatever direction you are facing.";
         yield return new WaitForSeconds(4f);
-        TutorialDialog.text = "Good. Now destroy that target to open the door then move to the next room.";
+        TutorialDialog.text = "Good. Now destroy that target to open the door and move to the next room.";
     }
 
-    IEnumerator ThridText()
+    IEnumerator ThirdText() 
     {
         Destroy(SecondDoor);
-        TutorialDialog.text = "Now all you need to know is how to boost. This is very helpful when dealing with many enemys.";
+        TutorialDialog.text = "Now you need to learn how to boost. This is very helpful when dealing with many enemies.";
         yield return new WaitForSeconds(4f);
-        TutorialDialog.text = "To boost press enter. You will shoot forward with a sudden burst of momentum.";
+        TutorialDialog.text = "To boost press left shift. You will shoot forward with a sudden burst of momentum.";
         yield return new WaitForSeconds(4f);     
-        TutorialDialog.text = "Excellent work. Now all that remains is to save us all. In the next room you will find a nightmare. Kill it.";
+        TutorialDialog.text = "Excellent work. Now you must save us all. In the next room you will find a nightmarish alien creature. Terminate it.";
         Destroy(ThridDoor);
     }
 
     IEnumerator FinalText()
     {
-        TutorialDialog.text = "Well done. Before you are three different missiles. Each works differently.";
+        TutorialDialog.text = "Well done. There are now three different missiles which you can choose from in front of you.";
         yield return new WaitForSeconds(4f);
-        TutorialDialog.text = "The green one is the big missile, slow with high damage. The purple is the charge missile, it can be charged to do massive damage. Finally the small one is the triple missile, a low power three round burst.";
+        TutorialDialog.text = "The green Big Missile is slow but packs quite a mean punch. The purple Charge Missile can be charged to inflict massive damage upon your enemies. Finally the small Triple Missile is a high speed but low power three round burst.";
         yield return new WaitForSeconds(8f);
-        TutorialDialog.text = "Drive into the one you want, and procede on your quest.";
-        CanSelectedMissile = true;
+        TutorialDialog.text = "Drive into the one you want, and proceed on your quest. The fate of the world is in your hands. Good luck!";
+        CanSelectedMissile = true;   
     }
 }
