@@ -9,6 +9,7 @@ public class ThridTrigger : MonoBehaviour
         if (collision.tag == "PlayerSub")
         {
             TutorialScript.instance.HasEnteredBossRoom = true;
+            GameControllerScript.instance.SetToBossMusic();
         }
     }
 }

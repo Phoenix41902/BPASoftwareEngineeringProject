@@ -18,7 +18,7 @@ public class BossWallScript : MonoBehaviour
     {
         if (collision.tag == "PlayerSub")
         {
-            
+            GameControllerScript.instance.SetToBossMusic();
             TwilightGameController.instance.BossFightStarted = true;
         }
     }

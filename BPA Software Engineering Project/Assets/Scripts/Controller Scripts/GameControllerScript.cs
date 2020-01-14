@@ -7,6 +7,10 @@ public class GameControllerScript : MonoBehaviour
     // create instance of the game controller
     public static GameControllerScript instance;
 
+    // audio
+    public AudioClip[] Songs;
+    public AudioSource SongPlayer;
+
     // constants for the attachment settings
     private const string SELECTED_MISSILE = "missile";
     private const string SELECTED_BOOST = "boost";
@@ -16,6 +20,11 @@ public class GameControllerScript : MonoBehaviour
     void Awake() {
         MakeSingleTon();
         StartGameForFirstTime();
+    }
+
+    private void Start()
+    {
+        SetToRegularMusic();
     }
 
     // function to make only one game controller per scene
@@ -35,6 +44,19 @@ public class GameControllerScript : MonoBehaviour
     }
 
     // functions to access player prefs outside of this script
+
+    // audio
+    public void SetToBossMusic()
+    {
+        SongPlayer.clip = Songs[1];
+        SongPlayer.Play();
+    }
+
+    public void SetToRegularMusic()
+    {
+        SongPlayer.clip = Songs[0];
+        SongPlayer.Play();
+    }
 
     // update functions
     // missiles

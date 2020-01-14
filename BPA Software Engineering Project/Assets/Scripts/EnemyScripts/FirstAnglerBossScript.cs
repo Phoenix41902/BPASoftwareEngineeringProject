@@ -112,6 +112,7 @@ public class FirstAnglerBossScript : MonoBehaviour
         if (Health <= 0)
         {
             TutorialScript.instance.BossIsKilled = true;
+            GameControllerScript.instance.SetToRegularMusic();
             BossCanvas.SetActive(false);
             Destroy(gameObject);
         }

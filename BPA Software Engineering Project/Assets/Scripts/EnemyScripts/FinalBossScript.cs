@@ -119,6 +119,7 @@ public class FinalBossScript : MonoBehaviour
         if (Health <= 0)
         {
             BossCanvas.SetActive(false);
+            GameControllerScript.instance.SetToRegularMusic();
             Destroy(Door);
             Destroy(gameObject);
         }
