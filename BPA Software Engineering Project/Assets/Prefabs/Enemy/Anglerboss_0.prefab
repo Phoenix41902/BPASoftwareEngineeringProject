@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 6657096452367921451}
   - component: {fileID: 6657096452367921450}
   - component: {fileID: 6657096452367921453}
-  - component: {fileID: 6657096452367921454}
+  - component: {fileID: 234406193283251674}
   m_Layer: 0
   m_Name: Anglerboss_0
   m_TagString: Enemy
@@ -384,8 +384,8 @@ MonoBehaviour:
   HealthBar: {fileID: 6657096452239575564}
   BossCanvas: {fileID: 6657096451748460618}
   StartWaitTime: 2
---- !u!61 &6657096452367921454
-BoxCollider2D:
+--- !u!70 &234406193283251674
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -394,22 +394,12 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 0.39}
-    newSize: {x: 0.8, y: 0.39}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.39}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.008696076, y: -0.036961205}
+  m_Size: {x: 0.78260845, y: 0.31608245}
+  m_Direction: 1
 --- !u!1 &6657096452644704469
 GameObject:
   m_ObjectHideFlags: 0

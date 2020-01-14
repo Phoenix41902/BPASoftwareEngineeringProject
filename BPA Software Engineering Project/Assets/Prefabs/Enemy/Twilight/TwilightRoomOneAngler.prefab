@@ -86,9 +86,9 @@ GameObject:
   - component: {fileID: 6849592687374073285}
   - component: {fileID: 6849592687374073290}
   - component: {fileID: 6849592687374073287}
-  - component: {fileID: 6849592687374073286}
   - component: {fileID: 6849592687374073281}
   - component: {fileID: 2474244839537616784}
+  - component: {fileID: 5946392237497918324}
   m_Layer: 10
   m_Name: TwilightRoomOneAngler
   m_TagString: Enemy
@@ -202,22 +202,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &6849592687374073286
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6849592687374073291}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.4
 --- !u!114 &6849592687374073281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +229,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   StartWaitTime: 0.5
+--- !u!70 &5946392237497918324
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6849592687374073291}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.011233, y: -0.029205954}
+  m_Size: {x: 0.77753556, y: 0.32158867}
+  m_Direction: 1
 --- !u!1 &6849592687582113169
 GameObject:
   m_ObjectHideFlags: 0
