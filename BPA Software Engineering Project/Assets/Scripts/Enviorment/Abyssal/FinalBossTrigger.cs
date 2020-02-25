@@ -6,7 +6,11 @@ public class FinalBossTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameControllerScript.instance.SetToBossMusic();
-        AbyssalController.instance.FinalBossStarted = true;
+        // activeate fight
+        if (collision.tag == "PlayerSub")
+        {
+            GameControllerScript.instance.SetToBossMusic();
+            AbyssalController.instance.FinalBossStarted = true;
+        }
     }
 }
